@@ -13,7 +13,7 @@
 <header>
     <h1>Efood Clone</h1>
     <img src="./src/assets/img/fachada01.png" alt="01" width="300" height="auto">
-    <img src="./src/assets/img/fachada02.png" alt="Logo do Efood" width="300" height="auto">
+    <img src="./src/assets/img/fachada02.png" alt="02" width="300" height="auto">
 </header>
 
 <details>
@@ -39,7 +39,6 @@
     <ul>
         <li>Frontend: Utiliza React, React Router, Redux, TypeScript, Styled Components para criar uma interface moderna, responsiva e interativa.</li>
         <li>Backend: Utiliza uma API RESTful para gerenciar dados de usuários, produtos e pedidos.</li>
-        <li>Banco de Dados: Utiliza MySQL para armazenar dados de usuários, produtos e pedidos.</li>
         <li>Ferramentas de Desenvolvimento: Utiliza ESLint e Prettier para garantir a qualidade do código e mantê-lo consistente.</li>
     </ul>
 </section>
@@ -78,6 +77,7 @@
         <li>│       └── page.tsx</li>
         <li>├── App.tsx</li>
         <li>├── index.tsx</li>
+        <li>├── main-styles.ts</li>
         <li>├── react-app-env.d.ts</li>
         <li>├── reportWebVitals.ts</li>
         <li>└── setupTests.ts</li>
@@ -104,7 +104,6 @@
         <li><img src="https://img.shields.io/badge/Redux-764ABC?style=for-the-badge&logo=redux&logoColor=white" alt="Badge Redux"></li>
         <li><img src="https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white" alt="Badge TypeScript"></li>
         <li><img src="https://img.shields.io/badge/Styled_Components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white" alt="Badge Styled Components"></li>
-        <li><img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="Badge MySQL"></li>
         <li><img src="https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white" alt="Badge ESLint"></li>
         <li><img src="https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=white" alt="Badge Prettier"></li>
         <li><img src="https://img.shields.io/badge/Git-E44C30?style=for-the-badge&logo=git&logoColor=white" alt="Badge Git"></li>
