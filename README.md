@@ -114,7 +114,7 @@
     <h2>Contato</h2>
     <ul>
         <li><a href="https://linktr.ee/anaeanali5" target="_blank"><img src="https://img.shields.io/badge/Ana_Alice_Rodrigues-blue?style=for-the-badge" alt="Perfil de Ana Alice Rodrigues"></a></li>
-        <li><a href="https://link-projeto-vercel" target="_blank"><img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Hospedado na Vercel"> clique para acessar o projeto</a></li>
+        <li><a href="https://efood-kappa-five.vercel.app/ " target="_blank"><img src="https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white" alt="Hospedado na Vercel"> clique para acessar o projeto</a></li>
     </ul>
     <p>Acesse o projeto na Vercel para ver o Efood Clone em ação.</p>
 </section>
