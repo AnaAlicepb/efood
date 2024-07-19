@@ -10,4 +10,3 @@ root.render(
   </React.StrictMode>
 )
 reportWebVitals()
-// Este é um comentário temporário para forçar uma alteração
