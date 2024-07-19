@@ -20,7 +20,6 @@ import {
 import { useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import { useDispatch } from 'react-redux'
-
 import { usePurchaseMutation } from '../../services/api'
 import { activeTheCart, clear } from '../../store/reducers/Cart'
 import { formatPrice } from '../../utils/function'
@@ -81,17 +80,17 @@ const Cart = () => {
   }
 
   const checkInputHasError = (fieldName: string) => {
-    const isTrouched = fieldName in form.touched
+    const isTouched = fieldName in form.touched
     const isInvalid = fieldName in form.errors
-    const hasError = isTrouched && isInvalid
+    const hasError = isTouched && isInvalid
     return hasError
   }
 
   const Delivery = () => {
-    if (items.length > 0) {
-      setViewsCartForms(false)
-    } else {
+    if (items.length === 0) {
       alert('Adicione um pedido')
+    } else {
+      setViewsCartForms(false)
     }
   }
 
@@ -127,19 +126,17 @@ const Cart = () => {
         .min(1, 'Minimo 1 caracteres'),
       complement: Yup.string().min(1, 'Minimo 1 caracteres'),
       CardName: Yup.string()
-        .required('Digite o nome da cidade')
+        .required('Digite o nome no cartão')
         .min(5, 'Minimo 1 caracteres'),
       CardNumber: Yup.string()
-        .required('Digite o nome da cidade')
+        .required('Digite o número do cartão')
         .min(5, 'Minimo 5 caracteres'),
-      cvv: Yup.string()
-        .required('Digite o nome da cidade')
-        .min(3, 'Minimo 3 caracteres'),
+      cvv: Yup.string().required('Digite o CVV').min(3, 'Minimo 3 caracteres'),
       expiresMonth: Yup.string()
-        .required('Digite O mês de vencimento ')
+        .required('Digite o mês de vencimento')
         .min(2, 'Minimo 2 caracteres'),
       expiresYear: Yup.string()
-        .required('Digite O ano de vencimento ')
+        .required('Digite o ano de vencimento')
         .min(2, 'Minimo 2 caracteres')
     }),
     onSubmit: (values) => {
@@ -300,7 +297,31 @@ const Cart = () => {
                       <Button
                         className="margin-top"
                         type="button"
-                        onClick={() => setViewsForm(false)}
+                        onClick={() => {
+                          const requiredFields = [
+                            'name',
+                            'address',
+                            'city',
+                            'cep',
+                            'addressNumber'
+                          ] as const
+                          const isFormValid = requiredFields.every(
+                            (field) => form.values[field] && !form.errors[field]
+                          )
+
+                          if (!isFormValid) {
+                            alert('Preencha todos os campos obrigatórios')
+                            form.setTouched(
+                              requiredFields.reduce(
+                                (acc, field) => ({ ...acc, [field]: true }),
+                                {}
+                              ),
+                              true
+                            )
+                          } else {
+                            setViewsForm(false)
+                          }
+                        }}
                       >
                         Continuar com o pagamento
                       </Button>
@@ -400,7 +421,7 @@ const Cart = () => {
               <>
                 <h3>Pedido realizado - {data?.orderId}</h3>
                 <p>
-                  stamos felizes em informar que seu pedido já está em processo
+                  Estamos felizes em informar que seu pedido já está em processo
                   de preparação e, em breve, será entregue no endereço
                   fornecido. Gostaríamos de ressaltar que nossos entregadores
                   não estão autorizados a realizar cobranças extras. Lembre-se
