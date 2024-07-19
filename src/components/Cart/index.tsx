@@ -267,7 +267,8 @@ const Cart = () => {
                         </InpuGroup>
                         <InpuGroup>
                           <label htmlFor="addressNumber">Número</label>
-                          <input
+                          <InputMask
+                            mask="99999"
                             onBlur={form.handleBlur}
                             onChange={form.handleChange}
                             className={
